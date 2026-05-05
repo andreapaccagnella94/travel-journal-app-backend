@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    // per far funzionare Tag::Create
+    // per far funzionare Tag::Create e Tag::update
     protected $fillable = [
         'name',
         'color',

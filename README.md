@@ -1,6 +1,5 @@
-# 🧭 Travel Journal App
-
-> Web app per documentare i tuoi viaggi con post, tag, media e filtri. Interfaccia Blade + API ready per React.
+> Web app per documentare i propri viaggi tramite post, tag e contenuti multimediali.  
+> Backend sviluppato con Laravel, con interfaccia Blade e API pronte per integrazione futura con React.
 
 ![Laravel](https://img.shields.io/badge/Laravel-10.x-red)
 ![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4)
@@ -9,21 +8,40 @@
 
 ---
 
-## ✨ Funzionalità
+## ✨ Stato Attuale del Progetto
 
-- ✅ Auth utenti (login/register) con Laravel Breeze
-- ✅ CRUD post diario di viaggio (titolo, descrizione, luogo, coordinate, mood, spese, riflessioni)
-- ✅ Tag e media (immagini/video) associati ai post
-- ✅ Filtri per luogo, mood, data, tag
-- ✅ Autorizzazione: ogni utente gestisce solo i propri post
-- ✅ Architettura API-ready per futuro frontend React
+### ✔ Completato
+
+- Autenticazione utenti (login/register) con Laravel Breeze  
+- CRUD completo dei Post  
+- CRUD completo dei Tag (con colore personalizzato)  
+- Relazioni:
+  - User → Post (1:N)
+  - Post → Media (1:N) *(struttura pronta)*
+  - Post ↔ Tag (N:N)  
+- Associazione Tag ai Post (create/edit)  
+- UI server-side con Blade  
+- Protezione dei dati: ogni utente gestisce solo i propri post  
+
+---
+
+## 🚧 In sviluppo
+
+- Upload e gestione Media (immagini/video)  
+- Filtri avanzati (mood, tag, distanza, testo)  
+- Dashboard riepilogativa  
+- Frontend React separato  
 
 ---
 
 ## 🧠 Architettura
 
-
-Laravel gestisce backend + frontend iniziale. Le API REST sono già predisposte per un eventuale frontend React separato.
+```text
+Browser
+   ↓
+Laravel (Blade + API)
+   ↓
+PostgreSQL
 
 ---
 
@@ -57,7 +75,7 @@ Laravel gestisce backend + frontend iniziale. Le API REST sono già predisposte 
 
 - **users**: gestito da Laravel Breeze
 - **posts**: titolo, descrizione, location, coordinate (lat/lng), mood, riflessioni, effort, expense
-- **tags**: nome univoco
+- **tags**: nome univoco + etichette colore
 - **media**: tipo (image/video) + url, collegato a un post
 - **post_tag**: tabella pivot per relazione many-to-many
 
@@ -98,3 +116,5 @@ MIT — vedi file `LICENSE`.
 ---
 
 > ⭐ Ti piace? Lascia una stella su GitHub! 🚀
+
+
